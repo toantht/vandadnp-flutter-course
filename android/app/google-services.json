@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "607718829933",
+    "project_id": "mynotes-with-unique-id",
+    "storage_bucket": "mynotes-with-unique-id.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607718829933:android:e5d000918bd2c5c05a3464",
+        "android_client_info": {
+          "package_name": "com.toantht.mynotes.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607718829933-k7d5irtj04pcs1n3r7ll67b0lq3gp9ob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk5bOpi45FtOwHT6OTznXcPSbxGIwOCDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607718829933-k7d5irtj04pcs1n3r7ll67b0lq3gp9ob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
