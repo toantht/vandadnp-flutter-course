@@ -7,7 +7,11 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 class NotesService {
-  NotesService._sharedInstance();
+  NotesService._sharedInstance() {
+    _notesStreamController = StreamController<List<DatabaseNote>>.broadcast(
+      onListen: () => _notesStreamController.sink.add(_notes),
+    );
+  }
   static final NotesService _shared = NotesService._sharedInstance();
   factory NotesService() => _shared;
 
@@ -15,8 +19,7 @@ class NotesService {
 
   List<DatabaseNote> _notes = [];
 
-  final _notesStreamController =
-      StreamController<List<DatabaseNote>>.broadcast();
+  late final StreamController<List<DatabaseNote>> _notesStreamController;
 
   Stream<List<DatabaseNote>> get allNotes => _notesStreamController.stream;
 
@@ -231,7 +234,7 @@ class NotesService {
 
       await db.execute(createUserTable);
 
-      const createNoteTable = '''CREATE TABLE IF NOT EXISTS "user" (
+      const createNoteTable = '''CREATE TABLE IF NOT EXISTS "note" (
         "id" INTEGER NOT NULL,
         "user_id" INTEGER NOT NULL,
         "text" TEXT,
