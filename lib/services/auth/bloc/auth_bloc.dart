@@ -12,9 +12,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       },
     );
 
-    // TODO - handle AuthEventShouldRegister
     on<AuthEventShouldRegister>(
-      (event, emit) {},
+      (event, emit) {
+        emit(const AuthStateRegistering(null));
+      },
     );
 
     on<AuthEventRegister>(
